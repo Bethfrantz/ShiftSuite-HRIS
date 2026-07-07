@@ -1,0 +1,144 @@
+/* -----------------------------------------
+   Scheduling Wrapper
+----------------------------------------- */
+
+.scheduling-wrapper {
+    padding: var(--space-24);
+    background: var(--neutral-50);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+/* Header */
+.scheduling-header {
+    text-align: center;
+}
+
+.scheduling-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-700);
+}
+
+.scheduling-subtitle {
+    color: var(--neutral-600);
+    font-size: var(--text-md);
+}
+
+/* Shift List */
+.shift-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+}
+
+.shift-card {
+    background: #ffffff;
+    padding: var(--space-20);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.shift-date {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--neutral-700);
+}
+
+.shift-employee {
+    color: var(--neutral-700);
+    font-size: var(--text-md);
+}
+
+.shift-position {
+    color: var(--neutral-600);
+    font-size: var(--text-sm);
+}
+
+.shift-time {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--neutral-800);
+}
+
+/* Shift Actions */
+.shift-actions {
+    margin-top: var(--space-12);
+    display: flex;
+    gap: var(--space-12);
+}
+
+.shift-btn {
+    flex: 1;
+    padding: var(--space-12) var(--space-16);
+    text-align: center;
+    background: var(--brand-primary);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.shift-btn:hover {
+    background: var(--brand-primary-dark);
+    transform: translateY(-2px);
+}
+
+.shift-btn.secondary {
+    background: var(--brand-secondary);
+}
+
+.shift-btn.secondary:hover {
+    background: var(--brand-secondary-dark);
+}
+
+/* Calendar */
+.calendar-container {
+    background: #ffffff;
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-12);
+}
+
+.calendar-day {
+    padding: var(--space-12);
+    background: var(--neutral-50);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--neutral-700);
+}
+
+.calendar-day.has-shift {
+    background: var(--neutral-200);
+    color: var(--neutral-800);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .scheduling-wrapper {
+        padding: var(--space-16);
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

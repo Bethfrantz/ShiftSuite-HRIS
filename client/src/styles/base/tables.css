@@ -1,0 +1,78 @@
+/* -----------------------------------------
+   Table Wrapper
+----------------------------------------- */
+
+.table-wrapper {
+    background: #ffffff;
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* -----------------------------------------
+   Table
+----------------------------------------- */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* -----------------------------------------
+   Header
+----------------------------------------- */
+
+.table th {
+    background: var(--neutral-100);
+    padding: var(--space-12);
+    text-align: left;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--neutral-700);
+    border-bottom: 2px solid var(--neutral-200);
+}
+
+/* -----------------------------------------
+   Cells
+----------------------------------------- */
+
+.table td {
+    padding: var(--space-12);
+    font-size: var(--text-md);
+    color: var(--neutral-600);
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+/* -----------------------------------------
+   Hover
+----------------------------------------- */
+
+.table tr:hover td {
+    background: var(--neutral-50);
+}
+
+/* -----------------------------------------
+   Status Tags
+----------------------------------------- */
+
+.table-status {
+    padding: var(--space-4) var(--space-12);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+}
+
+.table-status.active {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.table-status.warning {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.table-status.error {
+    background: var(--error-bg);
+    color: var(--error-text);
+}

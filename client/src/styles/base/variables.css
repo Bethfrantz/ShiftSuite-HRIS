@@ -1,0 +1,103 @@
+/* -----------------------------------------
+   Global Design Tokens
+----------------------------------------- */
+
+:root {
+    /* Brand Colors */
+    --brand-primary: #4f46e5;
+    --brand-primary-dark: #4338ca;
+    --brand-secondary: #10b981;
+    --brand-secondary-dark: #059669;
+
+    /* Neutral Colors */
+    --neutral-50: #f9fafb;
+    --neutral-100: #f3f4f6;
+    --neutral-200: #e5e7eb;
+    --neutral-300: #d1d5db;
+    --neutral-400: #9ca3af;
+    --neutral-500: #6b7280;
+    --neutral-600: #4b5563;
+    --neutral-700: #374151;
+    --neutral-800: #1f2937;
+    --neutral-900: #111827;
+
+    /* Status Colors */
+    --success-bg: #d1fae5;
+    --success-text: #065f46;
+
+    --warning-bg: #fef3c7;
+    --warning-text: #92400e;
+
+    --error-bg: #fee2e2;
+    --error-text: #b91c1c;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+
+    /* Spacing Scale (ShiftSuite Standard) */
+    --space-2: 0.125rem;
+    --space-4: 0.25rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --space-40: 2.5rem;
+    --space-48: 3rem;
+
+    /* Typography */
+    --font-family-base: "Inter", sans-serif;
+
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+}
+
+/* -----------------------------------------
+   Dark Mode Tokens
+----------------------------------------- */
+
+body.dark {
+    --brand-primary: #6366f1;
+    --brand-primary-dark: #4f46e5;
+
+    --neutral-50: #111827;
+    --neutral-100: #1f2937;
+    --neutral-200: #374151;
+    --neutral-300: #4b5563;
+    --neutral-400: #6b7280;
+    --neutral-500: #9ca3af;
+    --neutral-600: #d1d5db;
+    --neutral-700: #e5e7eb;
+    --neutral-800: #f3f4f6;
+    --neutral-900: #f9fafb;
+
+    --success-bg: #064e3b;
+    --success-text: #d1fae5;
+
+    --warning-bg: #78350f;
+    --warning-text: #fef3c7;
+
+    --error-bg: #7f1d1d;
+    --error-text: #fee2e2;
+
+    --shadow-sm: 0 2px 6px rgba(255, 255, 255, 0.05);
+    --shadow-md: 0 4px 12px rgba(255, 255, 255, 0.08);
+    --shadow-lg: 0 8px 20px rgba(255, 255, 255, 0.12);
+}

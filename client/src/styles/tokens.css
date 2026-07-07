@@ -1,0 +1,69 @@
+:root {
+   /* Spacing */
+   --space-2: 0.125rem;
+   --space-4: 0.25rem;
+   --space-8: 0.5rem;
+   --space-12: 0.75rem;
+   --space-16: 1rem;
+   --space-20: 1.25rem;
+   --space-24: 1.5rem;
+   --space-32: 2rem;
+   --space-40: 2.5rem;
+   --space-48: 3rem;
+
+
+   /* Radii */
+   --radius-sm: 4px;
+   --radius-md: 8px;
+   --radius-lg: 12px;
+
+   /* Shadows */
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+   --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.12);
+
+   /* Light Mode Colors */
+   --brand-primary: #4f46e5;
+   --brand-secondary: #6366f1;
+
+   --neutral-50: #f9fafb;
+   --neutral-100: #f3f4f6;
+   --neutral-200: #e5e7eb;
+   --neutral-300: #d1d5db;
+   --neutral-600: #4b5563;
+   --neutral-700: #374151;
+
+   /* Typography */
+   --font-family-base: "Inter", system-ui, sans-serif;
+
+   --text-xs: 0.75rem;
+   --text-sm: 0.875rem;
+   --text-md: 1rem;
+   --text-lg: 1.125rem;
+   --text-xl: 1.25rem;
+   --text-2xl: 1.5rem;
+   --text-3xl: 1.875rem;
+
+   --font-light: 300;
+   --font-normal: 400;
+   --font-medium: 500;
+   --font-semibold: 600;
+   --font-bold: 700;
+}
+
+/* -----------------------------------------
+   DARK MODE THEME
+----------------------------------------- */
+[data-theme="dark"] {
+   --neutral-50: #111827;
+   --neutral-100: #1f2937;
+   --neutral-200: #374151;
+   --neutral-300: #4b5563;
+   --neutral-600: #d1d5db;
+   --neutral-700: #f3f4f6;
+
+   --brand-primary: #818cf8;
+   --brand-secondary: #a5b4fc;
+
+   --shadow-sm: 0 1px 3px rgba(255, 255, 255, 0.08);
+   --shadow-md: 0 3px 6px rgba(255, 255, 255, 0.12);
+}

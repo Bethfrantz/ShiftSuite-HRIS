@@ -1,0 +1,54 @@
+@import "./styles/tokens.css";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    font-size: var(--text-md);
+    color: var(--neutral-700);
+    background: var(--neutral-50);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* -----------------------------------------
+   Headings
+----------------------------------------- */
+
+h1 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-16);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-12);
+}
+
+h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-8);
+}
+
+/* -----------------------------------------
+   Paragraphs
+----------------------------------------- */
+
+p {
+    font-size: var(--text-md);
+    font-weight: var(--font-normal);
+    margin-bottom: var(--space-8);
+}
+
+/* -----------------------------------------
+   Buttons & Links
+----------------------------------------- */
+
+button,
+a {
+    font-family: var(--font-family-base);
+    font-size: var(--text-md);
+}

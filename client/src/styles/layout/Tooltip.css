@@ -1,0 +1,23 @@
+.tooltip {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--neutral-700);
+    color: #ffffff;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    margin-left: var(--space-8);
+    z-index: 10;
+}
+
+.sidebar-link:hover .tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(var(--space-4));
+}

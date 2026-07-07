@@ -1,0 +1,35 @@
+/* -----------------------------------------
+   App Wrapper
+----------------------------------------- */
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page Content */
+.app-content {
+  flex: 1;
+  padding: var(--space-xl);
+}
+
+/* Page Titles */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: var(--neutral-500);
+  margin-bottom: var(--space-lg);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--neutral-200);
+  margin: var(--space-lg) 0;
+}

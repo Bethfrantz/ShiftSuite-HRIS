@@ -1,0 +1,135 @@
+/* -----------------------------------------
+   Manager Overview Wrapper
+----------------------------------------- */
+
+.manager-overview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    padding: var(--space-24);
+}
+
+/* HEADER */
+.manager-overview-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.manager-overview-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-700);
+}
+
+.manager-overview-subtitle {
+    font-size: var(--text-md);
+    color: var(--neutral-600);
+}
+
+/* -----------------------------------------
+   METRICS GRID
+----------------------------------------- */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-24);
+}
+
+.metric-card {
+    background: var(--neutral-100);
+    padding: var(--space-20);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    transition: box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.metric-title {
+    font-size: var(--text-sm);
+    color: var(--neutral-600);
+}
+
+.metric-value {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-700);
+}
+
+/* -----------------------------------------
+   SNAPSHOT
+----------------------------------------- */
+
+.snapshot-card {
+    background: var(--neutral-100);
+    padding: var(--space-20);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease;
+}
+
+.snapshot-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.snapshot-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-12);
+    color: var(--neutral-700);
+}
+
+.snapshot-text {
+    font-size: var(--text-md);
+    color: var(--neutral-600);
+}
+
+/* -----------------------------------------
+   RECENT SHIFTS
+----------------------------------------- */
+
+.recent-shifts-card {
+    background: var(--neutral-100);
+    padding: var(--space-20);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease;
+}
+
+.recent-shifts-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.recent-shifts-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-16);
+    color: var(--neutral-700);
+}
+
+.recent-shifts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-shifts-table th {
+    text-align: left;
+    padding: var(--space-12);
+    font-size: var(--text-sm);
+    color: var(--neutral-600);
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.recent-shifts-table td {
+    padding: var(--space-12);
+    font-size: var(--text-md);
+    color: var(--neutral-700);
+    border-bottom: 1px solid var(--neutral-100);
+}

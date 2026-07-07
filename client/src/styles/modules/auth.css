@@ -1,0 +1,101 @@
+/* -----------------------------------------
+   Auth Page Wrapper
+----------------------------------------- */
+
+.auth-wrapper {
+    min-height: 100vh;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Auth Card */
+.auth-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Title */
+.auth-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Inputs */
+.auth-input {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: #4f46e5;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Submit Button */
+.auth-submit {
+    background: #4f46e5;
+    color: #ffffff;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.auth-submit:hover {
+    background: #4338ca;
+}
+
+/* Links */
+.auth-link {
+    text-align: center;
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+    color: #3730a3;
+}
+
+/* Error Message */
+.auth-error {
+    color: #dc2626;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,127 @@
+/* -----------------------------------------
+   Employee Management Wrapper
+----------------------------------------- */
+
+.employee-wrapper {
+    padding: var(--space-24);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    background: #f5f7fa;
+}
+
+/* Header */
+.employee-header {
+    text-align: center;
+}
+
+.employee-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+}
+
+.employee-subtitle {
+    color: #6b7280;
+    font-size: var(--text-md);
+}
+
+/* Employee Grid */
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-24);
+}
+
+/* Employee Card */
+.employee-card {
+    background: #ffffff;
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.employee-name {
+    font-size: var(--text-xl);
+    font-weight: 600;
+}
+
+.employee-position {
+    color: #4b5563;
+    font-size: var(--text-md);
+}
+
+/* Status Badge */
+.employee-status {
+    display: inline-block;
+    padding: var(--space-4) var(--space-12);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Status Colors */
+.status-active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-leave {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-new {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Action Buttons */
+.employee-actions {
+    margin-top: var(--space-16);
+    display: flex;
+    gap: var(--space-12);
+}
+
+.employee-btn {
+    flex: 1;
+    padding: var(--space-12) var(--space-16);
+    text-align: center;
+    background: #4f46e5;
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.employee-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.employee-btn.secondary {
+    background: #10b981;
+}
+
+.employee-btn.secondary:hover {
+    background: #059669;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .employee-wrapper {
+        padding: var(--space-16);
+    }
+}

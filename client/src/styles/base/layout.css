@@ -1,0 +1,44 @@
+/* -----------------------------------------
+   Layout Utilities
+----------------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-24);
+}
+
+.section {
+    margin-bottom: var(--space-32);
+}
+
+.row {
+    display: flex;
+    gap: var(--space-24);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+}
+
+.card {
+    background: #ffffff;
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.card-header {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-16);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}

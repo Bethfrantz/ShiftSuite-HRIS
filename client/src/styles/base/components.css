@@ -1,0 +1,106 @@
+/* -----------------------------------------
+   Buttons
+----------------------------------------- */
+
+.btn {
+    padding: var(--space-12) var(--space-16);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-align: center;
+    display: inline-block;
+    transition: background 0.2s ease, transform 0.15s ease;
+    font-size: var(--text-md);
+    color: #ffffff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--brand-primary);
+}
+
+.btn-primary:hover {
+    background: var(--brand-primary-dark);
+}
+
+.btn-secondary {
+    background: var(--brand-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--brand-secondary-dark);
+}
+
+.btn-danger {
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+.btn-danger:hover {
+    background: var(--error-bg);
+    opacity: 0.9;
+}
+
+/* -----------------------------------------
+   Badges
+----------------------------------------- */
+
+.badge {
+    display: inline-block;
+    padding: var(--space-4) var(--space-12);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+}
+
+.badge-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.badge-warning {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.badge-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+/* -----------------------------------------
+   Modal
+----------------------------------------- */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-24);
+    z-index: 999;
+}
+
+.modal {
+    background: #ffffff;
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+}
+
+/* Dark Mode Panels */
+body.dark .panel,
+body.dark .card {
+    background: var(--neutral-100);
+    color: var(--neutral-800);
+    box-shadow: var(--shadow-md);
+}

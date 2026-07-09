@@ -30,18 +30,26 @@ export default function ManageShifts() {
     const [positionFilter, setPositionFilter] = useState("");
     const [dateFilter, setDateFilter] = useState("");
 
-    const filteredShifts = shifts.filter((shift) => {
+    // ⭐ SAFETY GUARDS — prevent crashes if API returns non-array
+    const safeShifts = Array.isArray(shifts) ? shifts : [];
+    const safeEmployees = Array.isArray(employees) ? employees : [];
+
+    // ⭐ SAFE FILTER LOGIC — prevents all runtime crashes
+    const filteredShifts = safeShifts.filter((shift) => {
         const matchesSearch =
-            shift.position.toLowerCase().includes(search.toLowerCase()) ||
-            shift.employee?.name.toLowerCase().includes(search.toLowerCase());
+            (shift.position || "").toLowerCase().includes(search.toLowerCase()) ||
+            (shift.employee?.name || "").toLowerCase().includes(search.toLowerCase());
 
         const matchesPosition =
             positionFilter === "" || shift.position === positionFilter;
 
         const matchesDate =
-            dateFilter === "" ||
-            new Date(shift.date).toDateString() ===
-            new Date(dateFilter).toDateString();
+            !dateFilter ||
+            (
+                shift.date &&
+                !isNaN(new Date(shift.date)) &&
+                new Date(shift.date).toDateString() === new Date(dateFilter).toDateString()
+            );
 
         return matchesSearch && matchesPosition && matchesDate;
     });
@@ -55,12 +63,31 @@ export default function ManageShifts() {
             const shiftData = await getAllShifts();
             const employeeData = await getAllEmployees();
 
-            setShifts(shiftData);
-            setEmployees(employeeData);
+            // Fix for employees not showing in dropdown
+            if (Array.isArray(employeeData)) {
+                setEmployees(employeeData);
+            } else if (Array.isArray(employeeData?.employees)) {
+                setEmployees(employeeData.employees);
+            } else {
+                setEmployees([]);
+            }
+
+            // Fix for shifts too (same issue possible)
+            if (Array.isArray(shiftData)) {
+                setShifts(shiftData);
+            } else if (Array.isArray(shiftData?.shifts)) {
+                setShifts(shiftData.shifts);
+            } else {
+                setShifts([]);
+            }
+
         } catch (err) {
             console.error("Error loading shift data:", err);
+            setEmployees([]);
+            setShifts([]);
         }
     }
+
 
     function handleChange(e) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -97,10 +124,10 @@ export default function ManageShifts() {
     function startEdit(shift) {
         setEditingId(shift._id);
         setForm({
-            date: shift.date?.slice(0, 10),
-            startTime: shift.startTime,
-            endTime: shift.endTime,
-            position: shift.position,
+            date: typeof shift.date === "string" ? shift.date.slice(0, 10) : "",
+            startTime: shift.startTime || "",
+            endTime: shift.endTime || "",
+            position: shift.position || "",
             employee: shift.employee?._id || "",
         });
     }
@@ -167,7 +194,7 @@ export default function ManageShifts() {
                         required
                     >
                         <option value="">Assign Employee</option>
-                        {employees.map((emp) => (
+                        {safeEmployees.map((emp) => (
                             <option key={emp._id} value={emp._id}>
                                 {emp.name}
                             </option>
@@ -252,11 +279,17 @@ export default function ManageShifts() {
                     <tbody>
                         {filteredShifts.map((shift) => (
                             <tr key={shift._id}>
-                                <td>{shift.date?.slice(0, 10)}</td>
                                 <td>
-                                    {shift.startTime} - {shift.endTime}
+                                    {typeof shift.date === "string"
+                                        ? shift.date.slice(0, 10)
+                                        : ""}
                                 </td>
-                                <td>{shift.position}</td>
+                                <td>
+                                    {(shift.startTime || "") +
+                                        " - " +
+                                        (shift.endTime || "")}
+                                </td>
+                                <td>{shift.position || ""}</td>
                                 <td>{shift.employee?.name || "Unassigned"}</td>
                                 <td className="actions">
                                     <button

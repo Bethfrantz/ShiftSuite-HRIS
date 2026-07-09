@@ -46,7 +46,8 @@ function App() {
     <Routes>
 
       {/* ROOT REDIRECT */}
-      <Route path="/" element={<Navigate to="/login" />} />
+      <Route index element={<Navigate to="/login" />} />
+
 
       {/* AUTH */}
       <Route path="/login" element={<Login />} />

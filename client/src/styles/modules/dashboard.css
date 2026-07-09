@@ -50,7 +50,13 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
+
+    /* ⭐ FIXES THE COLLAPSE ⭐ */
+    min-width: 0;
+    min-height: 0;
+    flex: 1 1 auto;
 }
+
 
 .panel h2 {
     font-size: var(--text-xl);

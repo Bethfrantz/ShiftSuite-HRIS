@@ -97,4 +97,17 @@
     flex: 1;
     padding: var(--space-24);
     transition: background 0.25s ease;
+    min-width: 0;
+    /* FIX */
+}
+
+
+.shift-table {
+    width: 100%;
+    table-layout: auto;
+}
+
+.panel {
+    width: 100%;
+    min-width: 0;
 }

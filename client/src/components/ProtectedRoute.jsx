@@ -2,16 +2,20 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const ProtectedRoute = ({ children, role }) => {
-    const { isAuthenticated, user } = useAuth();
+    const { isAuthenticated, user, loading } = useAuth();
+
+    // ⭐ Wait for auth to finish loading
+    if (loading) {
+        return <div style={{ padding: "2rem" }}>Loading...</div>;
+    }
 
     // Not logged in → redirect to login
     if (!isAuthenticated) {
         return <Navigate to="/login" replace />;
     }
 
-    // If a role is required (Manager or Employee)
+    // Role mismatch → redirect to correct dashboard
     if (role && user?.role !== role) {
-        // Redirect based on their actual role
         return user.role === "Manager"
             ? <Navigate to="/manager/dashboard" replace />
             : <Navigate to="/employee/dashboard" replace />;
@@ -21,3 +25,4 @@ const ProtectedRoute = ({ children, role }) => {
 };
 
 export default ProtectedRoute;
+

@@ -22,7 +22,9 @@ export default function ManageEmployees() {
     const [editingId, setEditingId] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    // Load employees on mount
+    // ⭐ SAFETY GUARD — prevents crashes if API returns non-array
+    const safeEmployees = Array.isArray(employees) ? employees : [];
+
     useEffect(() => {
         loadEmployees();
     }, []);
@@ -30,9 +32,18 @@ export default function ManageEmployees() {
     async function loadEmployees() {
         try {
             const data = await getAllEmployees();
-            setEmployees(data);
+
+            // ⭐ If API returns { employees: [...] }
+            if (Array.isArray(data)) {
+                setEmployees(data);
+            } else if (Array.isArray(data?.employees)) {
+                setEmployees(data.employees);
+            } else {
+                setEmployees([]); // prevent crashes
+            }
         } catch (err) {
             console.error("Error loading employees:", err);
+            setEmployees([]); // prevent render crash
         }
     }
 
@@ -64,9 +75,9 @@ export default function ManageEmployees() {
     function startEdit(emp) {
         setEditingId(emp._id);
         setForm({
-            name: emp.name,
-            email: emp.email,
-            position: emp.position,
+            name: emp.name || "",
+            email: emp.email || "",
+            position: emp.position || "",
             password: "",
         });
     }
@@ -156,14 +167,17 @@ export default function ManageEmployees() {
                 </thead>
 
                 <tbody>
-                    {employees.map((emp) => (
+                    {safeEmployees.map((emp) => (
                         <tr key={emp._id}>
-                            <td>{emp.name}</td>
-                            <td>{emp.email}</td>
-                            <td>{emp.position}</td>
+                            <td>{emp.name || ""}</td>
+                            <td>{emp.email || ""}</td>
+                            <td>{emp.position || ""}</td>
                             <td>
                                 <button onClick={() => startEdit(emp)}>Edit</button>
-                                <button className="delete-btn" onClick={() => handleDelete(emp._id)}>
+                                <button
+                                    className="delete-btn"
+                                    onClick={() => handleDelete(emp._id)}
+                                >
                                     Delete
                                 </button>
                             </td>
